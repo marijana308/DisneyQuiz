@@ -58,6 +58,7 @@ h1 {
 #pickDifficulty {
   display: flex;
   justify-content: center;
+  width: auto;
 }
 
 .pickDifficultyBtn {
@@ -68,9 +69,13 @@ h1 {
   border: none;
   padding-left: 3%;
   padding-right: 3%;
-  border-radius: 10%;
   cursor: pointer;
   color: white;
+  width: fit-content;
+}
+
+.pickDifficultyBtn:hover {
+  color: lightgray;
 }
 
 .pickDifficultyAgainBtn {

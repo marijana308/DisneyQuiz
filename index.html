@@ -1,193 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Disney Trivia</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/css/castleIconBlue.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/javascript/app.js"></script>
-    <link rel="stylesheet" typ="text/css" href="assets/css/style.css" />
-  </head>
-  <body class="bg">
-    <!-- <video autoplay muted id="introMain">
-      <source src="assets/videos/DisneyIntroMain.mp4" type="video/mp4" />
-    </video> -->
 
-    <!-- <video autoplay muted loop id="introLoop">
-      <source src="assets/videos/DisneyIntroLoop.mp4" type="video/mp4" />
-    </video> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Disney Trivia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/css/castleIconBlue.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="assets/javascript/app.js"></script>
+  <link rel="stylesheet" typ="text/css" href="assets/css/style.css" />
+</head>
 
-    <!-- The video -->
-    <video autoplay muted id="classicIntro">
-      <source src="assets/videos/ClassicDisneyIntro.mp4" type="video/mp4" />
-    </video>
+<body class="bg">
 
-    <div class="wrapper">
-      <button id="startQuizBtn">Start Quiz</button>
-    </div>
+  <video autoplay muted id="classicIntro">
+    <source src="assets/videos/ClassicDisneyIntro.mp4" type="video/mp4" />
+  </video>
 
-    <!-- <nav>
-      Disney Trivia!
-    </nav> -->
+  <div class="wrapper">
+    <button id="startQuizBtn">Start Quiz</button>
+  </div>
 
-    <h1>Disney Trivia!</h1>
+  <h1>Disney Trivia!</h1>
 
-    <div id="pickDifficulty">
-      <button id="easyBtn" class="pickDifficultyBtn">Easy</button>
-      <button id="mediumBtn" class="pickDifficultyBtn">Medium</button>
-      <button id="hardBtn" class="pickDifficultyBtn">Hard</button>
-    </div>
+  <div id="pickDifficulty">
+    <button id="easyBtn" class="pickDifficultyBtn">Easy</button>
+    <button id="mediumBtn" class="pickDifficultyBtn">Medium</button>
+    <button id="hardBtn" class="pickDifficultyBtn">Hard</button>
+  </div>
 
-    <div class="container">
-      <div>
-        <h2 id="status">#1/10</h2>
-        <!-- <button type="button" class="startBtn">Start</button> -->
-        <h4 id="question"></h4>
-        <br />
-        <h4 id="timer">30</h4>
-        <br />
-        <h4 id="choice1" class="choice"></h4>
-        <h4 id="choice2" class="choice"></h4>
-        <h4 id="choice3" class="choice"></h4>
-        <h4 id="choice4" class="choice"></h4>
-        <h3 id="message"></h3>
-        <!-- <br />
-        <h4 id="wins"></h4>
-        <br />
-        <h4 id="losses"></h4> -->
-        <div class="wrapper">
-          <button type="button" class="restartBtn">Try again</button>
-        </div>
-        <!-- <button type="button" class="pickDifficultyAgainBtn">
-          Try another difficulty
-        </button> -->
-      </div>
-    </div>
-
-    <!-- <div class="container">
-      <div>
-        <h2 id="status">#1/10</h2>
-        <button type="button" class="startBtn">Start</button>
-        <h4 id="question"></h4>
-        <br />
-        <h4 class="text-center" id="timer">30</h4>
-        <br />
-        <div>
-          <input type="radio" name="choices" value="c1" />
-          <h4 id="choice1"></h4>
-        </div>
-        <div>
-          <input type="radio" name="choices" value="c2" />
-          <h4 id="choice2"></h4>
-        </div>
-        <div>
-          <input type="radio" name="choices" value="c3" />
-          <h4 id="choice3"></h4>
-        </div>
-        <div>
-          <input type="radio" name="choices" value="c4" />
-          <h4 id="choice4"></h4>
-        </div>
-        <input class="submitBtn" type="submit" value="Submit" />
+  <div class="container">
+    <div>
+      <h2 id="status">#1/10</h2>
+      <h4 id="question"></h4>
+      <br />
+      <h4 id="timer">30</h4>
+      <br />
+      <h4 id="choice1" class="choice"></h4>
+      <h4 id="choice2" class="choice"></h4>
+      <h4 id="choice3" class="choice"></h4>
+      <h4 id="choice4" class="choice"></h4>
+      <h3 id="message"></h3>
+      <div class="wrapper">
         <button type="button" class="restartBtn">Try again</button>
-        <button type="button" class="pickDifficultyAgainBtn">
-          Try another difficulty
-        </button>
-        <h3 id="message"></h3>
-        <br />
-        <h4 id="wins"></h4>
-        <br />
-        <h4 id="losses"></h4>
       </div>
-    </div> -->
+    </div>
+  </div>
+</body>
 
-    <!-- <div id="footer">
-      <div id="footerContainer">
-        <div id="imginthefooter"></div>
-      </div>
-    </div> -->
-    ​​​​​​​​​
-
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1>
-            Disney Trivia!
-          </h1>
-          <br /><br />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 box">
-          <h2 id="status">Question# 1</h2>
-          <button type="button" class="btn btn-info start">Start</button>
-          <h4 id="question"></h4>
-          <br />
-          <h4 class="text-center" id="timer">30</h4>
-          <br />
-          <div class="row">
-            <input class="col-2" type="radio" name="choices" value="c1" /><br />
-            <h4 class="col-10 choices" id="choice1"></h4>
-          </div>
-          <div class="row">
-            <input class="col-2" type="radio" name="choices" value="c2" /><br />
-            <h4 class="col-10 choices" id="choice2"></h4>
-          </div>
-          <div class="row">
-            <input class="col-2" type="radio" name="choices" value="c3" /><br />
-            <h4 class="col-10 choices" id="choice3"></h4>
-          </div>
-          <div class="row">
-            <input class="col-2" type="radio" name="choices" value="c4" /><br />
-            <h4 class="col-10 choices" id="choice4"></h4>
-          </div>
-          <input class="btn btn-primary submit" type="submit" value="Submit" />
-          <button type="button" class="btn btn-info restart">Restart</button>
-          <h3 id="message"></h3>
-          <br />
-          <h4 id="wins"></h4>
-          <br />
-          <h4 id="losses"></h4>
-        </div>
-        <div class="col-1"></div>
-      </div>
-    </div> -->
-
-    <script></script>
-  </body>
 </html>

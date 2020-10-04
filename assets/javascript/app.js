@@ -1,4 +1,3 @@
-//Variable Declarations
 var pool;
 var choice = "";
 var numCorrect = 0;
@@ -8,8 +7,6 @@ var intervalId;
 var position = 1;
 var delay;
 
-//This function handles restarting the quiz by resetting the stats and bringing
-//the player back to pick the difficulty again
 function restart() {
   choice = "";
   numCorrect = 0;
@@ -26,29 +23,6 @@ function restart() {
   $("#pickDifficulty").show();
 }
 
-// function restart() {
-//   choice = "";
-//   numCorrect = 0;
-//   numWrong = 0;
-//   countDownTimer = 10;
-//   intervalId;
-//   position = 1;
-//   delay;
-
-//   intervalId = setInterval(decreaseTimer, 1000);
-
-//   displayQuestion();
-
-//   $("#message").hide();
-//   $("#wins").hide();
-//   $("#losses").hide();
-//   $(".restartBtn").hide();
-//   $(".pickDifficultyAgainBtn").hide();
-//   // $("input:radio").show();
-//   // $(".submitBtn").show();
-// }
-
-//This function decreases the timer and also handles what happens when the player runs out of time.
 function decreaseTimer() {
   if (countDownTimer <= 0) {
     hideQuestion();
@@ -60,13 +34,9 @@ function decreaseTimer() {
   $("#timer").text(countDownTimer);
   countDownTimer--;
 }
-//The next function handles what happens once the player goes through all of the questions.
-//It shows a message at the end and shows the restart button.
-//This function will also reset the timer and move to the next question if the quiz is not over.
+
 function next() {
   if (position === 10) {
-    // $(".submitBtn").hide();
-    // $("input:radio").hide();
     if (numCorrect > numWrong) {
       $("#message").text(
         "Quiz is over! You got " +
@@ -80,52 +50,37 @@ function next() {
           " out of 10 questions correct, you should try again!"
       );
     }
-    // $("#wins").text("You got " + numCorrect + " questions correct!");
-    // $("#losses").text("You got " + numWrong + " question(s) wrong");
-    // $("#wins").show();
-    // $("#losses").show();
     $("#message").show();
     $(".restartBtn").show();
-    //$(".pickDifficultyAgainBtn").show();
   } else {
-    //$("input:radio").prop("checked", false);
     position++;
     countDownTimer = 10;
     intervalId = setInterval(decreaseTimer, 1000);
 
     displayQuestion();
 
-    //$(".startBtn").hide();
     $("#message").hide();
-    //$("#wins").hide();
-    //$("#losses").hide();
   }
 }
-//Increases the number of right answers and lets the player know they answered
-//correctly by displaying a message.
+
 function rightAnswer() {
   $("#message").text("Correct!");
   $("#message").show();
   numCorrect++;
 }
-//Increases the number of wrong answers and lets the player know they answered
-//incorrectly by displaying a message.
+
 function wrongAnswer() {
   numWrong++;
   $("#message").text("Wrong... The answer was: " + pool[position].a);
   $("#message").show();
 }
 
-//Increases the number of wrong answers and lets the player know they didn't
-//answer on time by displaying a message.
 function timeUp() {
   numWrong++;
   $("#message").text("Time's up! The answer was: " + pool[position].a);
   $("#message").show();
 }
 
-//Both the hide and display question get called when moving in and out of different stages throughout the game.
-//The question will hide if a message is being displayed for example.
 function hideQuestion() {
   $("#status").hide();
   $("#question").hide();
@@ -135,12 +90,8 @@ function hideQuestion() {
   $("#choice4").hide();
 
   $("#timer").hide();
-  // $("input:radio").hide();
-  // $(".submitBtn").hide();
 }
 
-//After a message is shown and another question is queued, the displayQuestion function grabs the data
-//from the question pool and displays it in the container.
 function displayQuestion() {
   clearInterval(delay);
   $("#status").text("#" + position + "/10");
@@ -158,9 +109,6 @@ function displayQuestion() {
   $("#choice4").show();
 
   $("#timer").show();
-
-  // $("input:radio").show();
-  // $(".submitBtn").show();
 }
 
 function playRound() {
@@ -173,9 +121,7 @@ function playRound() {
 
 function submitAnswer(answer) {
   choice = pool[position][answer];
-  //$(".submitBtn").hide();
   $(".next").show();
-  //$("input:radio").hide();
   clearInterval(intervalId);
   hideQuestion();
   delay = setTimeout(next, 2000);
@@ -187,9 +133,6 @@ function startQuiz() {
   intervalId = setInterval(decreaseTimer, 1000);
 
   displayQuestion();
-
-  //$(".startBtn").hide();
-  //$("#message").hide();
 }
 
 $(document).ready(function() {
@@ -205,7 +148,6 @@ $(document).ready(function() {
   $(".container").hide();
   $("#pickDifficulty").hide();
   $(".restartBtn").hide();
-  //$(".pickDifficultyAgainBtn").hide();
 
   $(".restartBtn").on("click", function(event) {
     event.preventDefault();
@@ -220,43 +162,16 @@ $(document).ready(function() {
   $("#choice2").on("click", function(event) {
     event.preventDefault();
     submitAnswer("c2");
-    // choice = pool[position]["c2"];
-    // $(".submitBtn").hide();
-    // $(".next").show();
-    // $("input:radio").hide();
-    // clearInterval(intervalId);
-    // hideQuestion();
-    // delay = setTimeout(next, 2000);
-
-    // playRound();
   });
 
   $("#choice3").on("click", function(event) {
     event.preventDefault();
     submitAnswer("c3");
-    // choice = pool[position]["c3"];
-    // $(".submitBtn").hide();
-    // $(".next").show();
-    // $("input:radio").hide();
-    // clearInterval(intervalId);
-    // hideQuestion();
-    // delay = setTimeout(next, 2000);
-
-    // playRound();
   });
 
   $("#choice4").on("click", function(event) {
     event.preventDefault();
     submitAnswer("c4");
-    // choice = pool[position]["c4"];
-    // $(".submitBtn").hide();
-    // $(".next").show();
-    // $("input:radio").hide();
-    // clearInterval(intervalId);
-    // hideQuestion();
-    // delay = setTimeout(next, 2000);
-
-    // playRound();
   });
 
   $("#timer").hide();
@@ -270,7 +185,6 @@ $(document).ready(function() {
 
   $("#easyBtn").on("click", function(event) {
     $("#pickDifficulty").hide();
-    //$("#status").show();
     $(".container").show();
     pool = {
       1: {
@@ -318,11 +232,11 @@ $(document).ready(function() {
       },
       6: {
         q: "How many wishes did the genie grant Aladdin?",
-        c1: "1",
-        c2: "5",
-        c3: "3",
+        c1: "one",
+        c2: "five",
+        c3: "three",
         c4: "Unlimited wishes",
-        a: "3"
+        a: "three"
       },
       7: {
         q: "Cruella de Vil is the villain in which Disney movie?",
@@ -364,7 +278,6 @@ $(document).ready(function() {
 
   $("#mediumBtn").on("click", function(event) {
     $("#pickDifficulty").hide();
-    //$("#status").show();
     $(".container").show();
     pool = {
       1: {
@@ -457,7 +370,6 @@ $(document).ready(function() {
 
   $("#hardBtn").on("click", function(event) {
     $("#pickDifficulty").hide();
-    //$("#status").show();
     $(".container").show();
     pool = {
       1: {
@@ -547,23 +459,4 @@ $(document).ready(function() {
 
     startQuiz();
   });
-
-  // $(".pickDifficultyAgainBtn").on("click", function(event) {
-  //   event.preventDefault();
-  //   choice = "";
-  //   numCorrect = 0;
-  //   numWrong = 0;
-  //   countDownTimer = 10;
-  //   intervalId;
-  //   position = 1;
-  //   delay;
-  //   hideQuestion();
-  //   // $("#status").hide();
-  //   $("#message").hide();
-  //   $("#wins").hide();
-  //   $("#losses").hide();
-  //   $(".restartBtn").hide();
-  //   $(".pickDifficultyAgainBtn").hide();
-  //   $("#pickDifficulty").show();
-  // });
 });
