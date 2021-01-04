@@ -135,7 +135,7 @@ function startQuiz() {
   displayQuestion();
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   document.getElementById("startQuizBtn").style.display = "none";
 
   function showStartQuizButton() {
@@ -149,41 +149,41 @@ $(document).ready(function() {
   $("#pickDifficulty").hide();
   $(".restartBtn").hide();
 
-  $(".restartBtn").on("click", function(event) {
+  $(".restartBtn").on("click", function (event) {
     event.preventDefault();
     restart();
   });
 
-  $("#choice1").on("click", function(event) {
+  $("#choice1").on("click", function (event) {
     event.preventDefault();
     submitAnswer("c1");
   });
 
-  $("#choice2").on("click", function(event) {
+  $("#choice2").on("click", function (event) {
     event.preventDefault();
     submitAnswer("c2");
   });
 
-  $("#choice3").on("click", function(event) {
+  $("#choice3").on("click", function (event) {
     event.preventDefault();
     submitAnswer("c3");
   });
 
-  $("#choice4").on("click", function(event) {
+  $("#choice4").on("click", function (event) {
     event.preventDefault();
     submitAnswer("c4");
   });
 
   $("#timer").hide();
 
-  $("#startQuizBtn").on("click", function(event) {
+  $("#startQuizBtn").on("click", function (event) {
     $("#classicIntro").hide();
     $("#startQuizBtn").hide();
     $("#pickDifficulty").show();
     $("h1").show();
   });
 
-  $("#easyBtn").on("click", function(event) {
+  $("#easyBtn").on("click", function (event) {
     $("#pickDifficulty").hide();
     $(".container").show();
     pool = {
@@ -193,7 +193,7 @@ $(document).ready(function() {
         c2: "Mortimer Mouse",
         c3: "Steven Mouse",
         c4: "Michael Mouse",
-        a: "Mortimer Mouse"
+        a: "Mortimer Mouse",
       },
 
       2: {
@@ -202,7 +202,7 @@ $(document).ready(function() {
         c2: "Kirikou",
         c3: "Rafiki",
         c4: "Pumba",
-        a: "Mufasa"
+        a: "Mufasa",
       },
       3: {
         q:
@@ -211,7 +211,7 @@ $(document).ready(function() {
         c2: "Recycled paper",
         c3: "Coal",
         c4: "Dreams",
-        a: "Children's screams"
+        a: "Children's screams",
       },
       4: {
         q: "Who was Snow White's enemy?",
@@ -219,7 +219,7 @@ $(document).ready(function() {
         c2: "Maleficient",
         c3: "Cruella de Vill",
         c4: "Scar",
-        a: "The Evil Queen"
+        a: "The Evil Queen",
       },
       5: {
         q:
@@ -228,7 +228,7 @@ $(document).ready(function() {
         c2: "A camel",
         c3: "A cow",
         c4: "A llama",
-        a: "A llama"
+        a: "A llama",
       },
       6: {
         q: "How many wishes did the genie grant Aladdin?",
@@ -236,7 +236,7 @@ $(document).ready(function() {
         c2: "five",
         c3: "three",
         c4: "Unlimited wishes",
-        a: "three"
+        a: "three",
       },
       7: {
         q: "Cruella de Vil is the villain in which Disney movie?",
@@ -244,7 +244,7 @@ $(document).ready(function() {
         c2: "101 Dalmations",
         c3: "Sleeping Beauty",
         c4: "The AristoCats",
-        a: "101 Dalmations"
+        a: "101 Dalmations",
       },
       8: {
         q:
@@ -253,7 +253,7 @@ $(document).ready(function() {
         c2: "Colby",
         c3: "Tony",
         c4: "Andy",
-        a: "Andy"
+        a: "Andy",
       },
       9: {
         q: "Who sang the song Under The Sea in the film The Little Mermaid?",
@@ -261,7 +261,7 @@ $(document).ready(function() {
         c2: "Pascal",
         c3: "Nemo",
         c4: "Sebastian",
-        a: "Sebastian"
+        a: "Sebastian",
       },
       10: {
         q: "What was the name of the man who created Pinocchio?",
@@ -269,14 +269,14 @@ $(document).ready(function() {
         c2: "Paul",
         c3: "Geppetto",
         c4: "Martin",
-        a: "Geppetto"
-      }
+        a: "Geppetto",
+      },
     };
 
     startQuiz();
   });
 
-  $("#mediumBtn").on("click", function(event) {
+  $("#mediumBtn").on("click", function (event) {
     $("#pickDifficulty").hide();
     $(".container").show();
     pool = {
@@ -286,7 +286,7 @@ $(document).ready(function() {
         c2: "Pinocchio",
         c3: "The fox and the hound",
         c4: "The land before time",
-        a: "The land before time"
+        a: "The land before time",
       },
 
       2: {
@@ -296,7 +296,7 @@ $(document).ready(function() {
         c2: "Scuttle",
         c3: "Flotsam and Jetsam",
         c4: "Pinto",
-        a: "Flotsam and Jetsam"
+        a: "Flotsam and Jetsam",
       },
       3: {
         q: "What is the name of Donald Duck’s girlfriend?",
@@ -304,7 +304,7 @@ $(document).ready(function() {
         c2: "Daisy",
         c3: "Deanna",
         c4: "Dereka",
-        a: "Daisy"
+        a: "Daisy",
       },
       4: {
         q: "Who sang ‘When You Wish Upon a Star’?",
@@ -312,7 +312,7 @@ $(document).ready(function() {
         c2: "Jiminy Cricket",
         c3: "Launchpad McQuack",
         c4: "Baloo",
-        a: "Jiminy Cricket"
+        a: "Jiminy Cricket",
       },
       5: {
         q: "When did Mickey Mouse first appear?",
@@ -320,7 +320,7 @@ $(document).ready(function() {
         c2: "1928",
         c3: "1939",
         c4: "1951",
-        a: "1928"
+        a: "1928",
       },
       6: {
         q: "What's the name of Snow White's prince?",
@@ -328,7 +328,7 @@ $(document).ready(function() {
         c2: "Florian",
         c3: "William",
         c4: "His name is unknown",
-        a: "Florian"
+        a: "Florian",
       },
       7: {
         q:
@@ -337,7 +337,7 @@ $(document).ready(function() {
         c2: "100 years",
         c3: "10 000 years",
         c4: "100 000 years",
-        a: "10 000 years"
+        a: "10 000 years",
       },
       8: {
         q: "Who was the first Disney princess?",
@@ -345,7 +345,7 @@ $(document).ready(function() {
         c2: "Snow White",
         c3: "Aurora",
         c4: "Belle",
-        a: "Snow White"
+        a: "Snow White",
       },
       9: {
         q: "How many sisters does Ariel have?",
@@ -353,7 +353,7 @@ $(document).ready(function() {
         c2: "six",
         c3: "five",
         c4: "four",
-        a: "six"
+        a: "six",
       },
       10: {
         q:
@@ -362,13 +362,13 @@ $(document).ready(function() {
         c2: "Bambi",
         c3: "Mickey Mouse",
         c4: "Andy",
-        a: "Dumbo"
-      }
+        a: "Dumbo",
+      },
     };
     startQuiz();
   });
 
-  $("#hardBtn").on("click", function(event) {
+  $("#hardBtn").on("click", function (event) {
     $("#pickDifficulty").hide();
     $(".container").show();
     pool = {
@@ -378,7 +378,7 @@ $(document).ready(function() {
         c2: "Horatio Thelonious Keith Crustaceous Sebastian",
         c3: "Horatio Thelonious Ignacious Crustaceous Sebastian",
         c4: "Johann Sebastian Bach",
-        a: "Horatio Thelonious Ignacious Crustaceous Sebastian"
+        a: "Horatio Thelonious Ignacious Crustaceous Sebastian",
       },
 
       2: {
@@ -387,7 +387,7 @@ $(document).ready(function() {
         c2: "Dwarf Sneezy from Snow White",
         c3: "Mickey Mouse",
         c4: "Fairy Godmother from Cinderella",
-        a: "The kitten who belonged to Geppetto in Pinocchio"
+        a: "The kitten who belonged to Geppetto in Pinocchio",
       },
       3: {
         q: "Which address does Andy's family move to at the end of Toy Story?",
@@ -395,7 +395,7 @@ $(document).ready(function() {
         c2: "13 Coronation Street",
         c3: "234 Elm Street",
         c4: "742 Evergreen Terrace",
-        a: "234 Elm Street"
+        a: "234 Elm Street",
       },
       4: {
         q: "What is the name of the unseen villain in Bambi?",
@@ -403,7 +403,7 @@ $(document).ready(function() {
         c2: "Kaa",
         c3: "Man",
         c4: "Grizela",
-        a: "Man"
+        a: "Man",
       },
       5: {
         q: "What's Simba's mother's name?",
@@ -411,7 +411,7 @@ $(document).ready(function() {
         c2: "Bahar",
         c3: "Dakini",
         c4: "Zahara",
-        a: "Sarabi"
+        a: "Sarabi",
       },
       6: {
         q: "Which Disney princess has the fewest lines?",
@@ -419,7 +419,7 @@ $(document).ready(function() {
         c2: "Snow White",
         c3: "Tiana",
         c4: "Belle",
-        a: "Aurora"
+        a: "Aurora",
       },
       7: {
         q: "What was the name of Maleficent’s pet raven?",
@@ -427,7 +427,7 @@ $(document).ready(function() {
         c2: "Grim",
         c3: "Virion",
         c4: "Morgan",
-        a: "Diablo"
+        a: "Diablo",
       },
       8: {
         q:
@@ -436,7 +436,7 @@ $(document).ready(function() {
         c2: "The Sword in the Stone",
         c3: "101 Dalmatians",
         c4: "The Jungle Book",
-        a: "The Jungle Book"
+        a: "The Jungle Book",
       },
       9: {
         q:
@@ -445,7 +445,7 @@ $(document).ready(function() {
         c2: "Oozma Kappa",
         c3: "Delta Psi",
         c4: "Kappa Alpha Psi",
-        a: "Oozma Kappa"
+        a: "Oozma Kappa",
       },
       10: {
         q: "What was the name of Buzz Lightyear’s arch nemesis?",
@@ -453,8 +453,8 @@ $(document).ready(function() {
         c2: "Burg",
         c3: "Furg",
         c4: "Murg",
-        a: "Zurg"
-      }
+        a: "Zurg",
+      },
     };
 
     startQuiz();
